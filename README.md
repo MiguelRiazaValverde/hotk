@@ -1,6 +1,6 @@
 # @hotk/hotk
 
-[![npm version](https://img.shields.io/npm/v/@hotk/core.svg)](https://www.npmjs.com/package/@hotk/core)
+[![npm version](https://img.shields.io/npm/v/@hotk/hotk.svg)](https://www.npmjs.com/package/@hotk/core)
 
 > **hotk** is a lightweight and ergonomic library for managing advanced hotkeys on desktop platforms. It provides a declarative and expressive API to register key combinations, define actions, chain subactions, and detect patterns like double presses or complex sequences.
 
