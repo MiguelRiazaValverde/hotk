@@ -1,6 +1,6 @@
 {
   "name": "@hotk/hotk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Powerful and minimal library for managing global and contextual hotkeys on desktop platforms.",
   "keywords": [
     "hotkey",
