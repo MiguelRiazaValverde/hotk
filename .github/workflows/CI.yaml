@@ -1,0 +1,58 @@
+name: CI
+
+env:
+  APP_NAME: hanna
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Enable corepack BEFORE setup-node cache
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Prepare Yarn 4.9.2
+        run: corepack prepare yarn@4.9.2 --activate
+
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: yarn
+
+      - name: Prepare Yarn 4.9.2
+        run: corepack prepare yarn@4.9.2 --activate
+
+      - run: yarn install
+      - run: yarn build
+
+      - run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

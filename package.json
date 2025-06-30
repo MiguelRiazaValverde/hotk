@@ -1,0 +1,30 @@
+{
+  "name": "@hotk/hotk",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "launch": "npx tsc && node ./dist/index.js",
+    "build": "npx tsc",
+    "test": "npx tsc && ava"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@hotk/core": "^0.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "ava": "^6.0.1",
+    "axios": "^1.10.0",
+    "node-fetch": "^3.3.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.8.3"
+  },
+  "ava": {
+    "timeout": "3m"
+  },
+  "packageManager": "yarn@4.9.2"
+}
