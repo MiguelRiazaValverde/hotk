@@ -1,6 +1,17 @@
 {
   "name": "@hotk/hotk",
   "version": "0.0.2",
+  "description": "Powerful and minimal library for managing global and contextual hotkeys on desktop platforms.",
+  "keywords": [
+    "hotkey",
+    "hotkeys",
+    "desktop",
+    "hotk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiguelRiazaValverde/hotk.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
